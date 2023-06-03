@@ -1,9 +1,9 @@
-import { PaletteMode } from '@mui/material';
+import { LinkProps, PaletteMode } from '@mui/material';
 import { createTheme, ThemeOptions, Theme } from '@mui/material/styles';
+import LinkBehavior from './componentModify';
 
 // variable type
 type ColorTokens = {
-  grey: string;
   primary: string;
   secondary: string;
   tertiary: string;
@@ -17,39 +17,35 @@ interface ThemeSettings extends ThemeOptions {
     primary: {
       main: string;
     };
+    secondary: {
+      main: string;
+    };
+    text: {
+      primary: string;
+    };
+    background: {
+      paper: string;
+      default: string;
+    };
   };
 }
 
 // Color vairiant choose
 const lightMode: ColorTokens = {
-  grey: '#41f2d3',
-  primary: '#333',
+  primary: '#F2F2F2',
   secondary: '#fcf0dd',
   tertiary: '#8884d8',
   background: '#2d2d34',
-
-  // {
-  //   // yellow
-  //   100: '#fcf0dd',
-  //   // 200: '#fae1bb',
-  //   // 300: '#f7d299',
-  //   // 400: '#f5c377',
-  //   // 500: '#f2b455',
-  //   // 600: '#c29044',
-  //   // 700: '#916c33',
-  //   // 800: '#614822',
-  //   // 900: '#302411',
-  // },
 };
 
 const darkMode: ColorTokens = {
-  grey: '#41f2d3',
-  primary: '#333',
-  secondary: '#fcf0dd',
+  primary: '#1F7A65',
+  secondary: '#1f7a65',
   tertiary: '#8884d8',
-  background: '#2d2d34',
+  background: '#F2F2F2',
 };
 
+// color selector
 const colorTokens = (mode: string): ColorTokens => ({
   ...(mode === 'dark' ? lightMode : darkMode),
 });
@@ -58,7 +54,30 @@ const themeSetting = (mode: PaletteMode): ThemeSettings => ({
   palette: {
     mode: mode,
     primary: {
-      main: '#f9f9f9',
+      main: '#efefef',
+    },
+    secondary: {
+      main: '#1F7A65',
+    },
+    text: {
+      primary: '#000',
+    },
+    background: {
+      paper: '#F2F2F2',
+      default: '#F9F9F9',
+    },
+  },
+
+  components: {
+    MuiLink: {
+      defaultProps: {
+        component: LinkBehavior,
+      } as LinkProps,
+    },
+    MuiButtonBase: {
+      defaultProps: {
+        LinkComponent: LinkBehavior,
+      },
     },
   },
 });

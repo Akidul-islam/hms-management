@@ -1,1 +1,4 @@
-export const SOME_ACTION_TYPE = 'SOME_ACTION_TYPE';
+export const SIDE_MENU_OPEN = 'SIDE_MENU_OPEN';
+
+export const SUB_LINK_ACTIVE = 'SUB_LINK_ACTIVE';
+export const TOGGLE_BUTTON = 'TOGGLE_BUTTON';
