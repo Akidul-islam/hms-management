@@ -1,12 +1,12 @@
 import AdminPage from '../pages/admins/AdminPage';
-import AppointmentPage from '../pages/admins/appointment/AppointmentPage';
-import BlogPage from '../pages/admins/blog/BlogPage';
-import OverviewPage from '../pages/admins/overview/OverviewPage';
-import ReviewsDoctorPage from '../pages/admins/reviews/ReviewsDoctorPage';
-import DoctorPage from '../pages/admins/staffs/DoctorPage';
-import PatientPage from '../pages/patients/PatientPage';
+import AppointmentPage from '../pages/admins/AppointmentPage';
+import BlogPage from '../pages/admins/BlogPage';
+import OverviewPage from '../pages/admins/OverviewPage';
+import ReviewsDoctorPage from '../pages/admins/ReviewsDoctorPage';
+import DoctorPage from '../pages/admins/DoctorPage';
+import PatientPage from '../pages/admins/PatientPage';
 // ts types
-import { SideBarTypes } from '../tsScriptTypes';
+import { SideBarTypes } from '../services/typescript/navts';
 // mui icon
 import {
   DashboardOutlined,
@@ -15,7 +15,7 @@ import {
   ExtensionSharp,
 } from '@mui/icons-material';
 
-export const sidebar: SideBarTypes[] = [
+const sidebar: SideBarTypes[] = [
   {
     page: 'Dashboard',
     icon: <DashboardOutlined />,
@@ -59,7 +59,7 @@ export const sidebar: SideBarTypes[] = [
 ];
 
 // rotues
-export const router = [
+const router = [
   {
     parent: 'admin',
     component: AdminPage,
@@ -104,3 +104,5 @@ export const router = [
     role: ['patient'],
   },
 ];
+
+export { sidebar, router };

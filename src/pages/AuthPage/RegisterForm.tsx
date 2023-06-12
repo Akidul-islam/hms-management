@@ -2,8 +2,8 @@ import { Button, TextField } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useDropzone } from 'react-dropzone';
-import { registerSchema } from '../../utilites/validationSchema';
-import { useStyles, CustomField } from './form.style';
+import { registerSchema } from '../../services/utils/validationSchema';
+import { useStyles } from '../../services/styles/form.style';
 
 function RegisterForm() {
   const classes = useStyles();

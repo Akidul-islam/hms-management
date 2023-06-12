@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import HomePage from './pages/home/HomePage';
+import HomePage from './pages/HomePage';
 import RegisterForm from './pages/AuthPage/RegisterForm';
 import PageNotFound from './pages/PageNotFound';
 import UnAuthorized from './pages/UnAuthorized';
 import { router } from './staticData/navigation';
-import PrivateRoute from './PrivateRoutes';
+import PrivateRoute from './containers/auth/PrivateRoutes';
 
 const App: React.FC = () => {
   return (
